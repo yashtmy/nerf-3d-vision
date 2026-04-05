@@ -1,4 +1,4 @@
-# NeRF from Scratch — Neural Radiance Fields in PyTorch
+# Neural Radiance Fields in PyTorch
 
 <p align="center">
   <img src="assets/teaser.gif" width="700" alt="NeRF 360° render of the Lego scene"/>
