@@ -1,29 +1,3 @@
-# ============================================================
-#   NeRF from Scratch — Google Colab Notebook
-#   3D Neural Rendering | TCS Research Internship Project
-# ============================================================
-# Run this file cell-by-cell in Google Colab (T4 GPU recommended).
-# Each section is marked with  # %%  (Colab cell separator).
-#
-# Expected runtime: ~2h for 50k iterations on a T4 GPU.
-# ============================================================
-
-# %% [markdown]
-# # 🔷 NeRF from Scratch — Neural Radiance Fields
-# **3D Neural Rendering · PyTorch · Google Colab**
-#
-# This notebook implements the full NeRF pipeline:
-# 1. Dataset download and loading
-# 2. Ray generation from camera poses
-# 3. NeRF MLP model (coarse + fine)
-# 4. Volume rendering
-# 5. Training loop with PSNR tracking
-# 6. Novel view synthesis (orbit video)
-# 7. Mesh extraction via marching cubes
-#
-# **Reference:** Mildenhall et al., "NeRF: Representing Scenes as Neural
-# Radiance Fields for View Synthesis", ECCV 2020
-
 # %% — Cell 1: Install dependencies
 # ─────────────────────────────────
 
@@ -63,8 +37,7 @@ for fname in ["model.py", "utils.py", "train.py", "render.py"]:
 import urllib.request, zipfile, os
 
 DATA_DIR = "/content/data/nerf_synthetic"
-SCENE    = "lego"           # options: lego, hotdog, chair, drums, ficus, ...
-
+SCENE    = "lego"         
 os.makedirs("/content/data", exist_ok=True)
 
 if not os.path.exists(os.path.join(DATA_DIR, SCENE)):
@@ -179,13 +152,12 @@ os.makedirs("/content/renders", exist_ok=True)
 
 coarse_model, fine_model = train_nerf(**CONFIG)
 
-print("\n🎉 Training complete!")
+print("\n Training complete")
 
 
 # %% — Cell 8: Plot training curves
 # ───────────────────────────────────
-# (This reads logs from stdout — add TensorBoard for richer logging)
-print("Training complete! Check /content/renders/ for validation images.")
+print("Training complete Check /content/renders/ for validation images.")
 print("Use TensorBoard for live loss curves — see README for setup.")
 
 
@@ -277,4 +249,3 @@ for f in ["/content/renders/orbit.gif",
         files.download(f)
         print(f"Downloaded: {f}")
 
-print("\n✅ All done! Add these outputs to your GitHub README.")
