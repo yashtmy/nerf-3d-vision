@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <a href="https://colab.research.google.com/github/yashtmy/nerf-3d-vision/blob/main/nerf_colab.py">
+  <a href="https://colab.research.google.com/drive/1XUuNNj1qrecl-Z2alX31J4N54Uh-9hEU?usp=sharing">
     <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab"/>
   </a>
   <img src="https://img.shields.io/badge/Python-3.9%2B-blue.svg"/>
